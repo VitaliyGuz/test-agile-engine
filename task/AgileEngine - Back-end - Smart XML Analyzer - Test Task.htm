@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>AgileEngine - Back-end - Smart XML Analyzer - Test Task</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/img/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./AgileEngine - Back-end - Smart XML Analyzer - Test Task_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="./AgileEngine - Back-end - Smart XML Analyzer - Test Task_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="AgileEngine%20-%20Back-end%20-%20Smart%20XML%20Analyzer%20-%20Test%20Task_files/css" rel="stylesheet" type="text/css">
+    <link href="AgileEngine%20-%20Back-end%20-%20Smart%20XML%20Analyzer%20-%20Test%20Task_files/css(1)" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="./AgileEngine - Back-end - Smart XML Analyzer - Test Task_files/clean-blog.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- Page Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-10">
+            <div class="site-heading logo">
+              <img src="AgileEngine%20-%20Back-end%20-%20Smart%20XML%20Analyzer%20-%20Test%20Task_files/rocket.png" style="width: 5em">
+              <img src="AgileEngine%20-%20Back-end%20-%20Smart%20XML%20Analyzer%20-%20Test%20Task_files/name.png" style="width: 8em">
+            </div>
+            <div class="site-heading description">
+              <h1>Smart XML Analyzer</h1>
+              <span class="subheading">Software Engineer - Complex algorithms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
+          <h2>
+            Intro
+          </h2>
+          <p>
+            Imagine that you are writing a simple web crawler that locates a user-selected element on a web site with
+            frequently changing information. You regularly face an issue that the crawler fails to find the element
+            after minor page updates. After some analysis you decided to make your analyzer tolerant to minor website
+            changes so that you don’t have to update the code every time.
+          </p>
+          <p>
+            It would be best to view
+            <a href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/sample-0-origin.html">the attached HTML page</a>,
+            imagining that you need to find the “Everything OK”
+            button on every page.
+          </p>
+
+          <hr>
+
+          <h2>
+            Requirements
+          </h2>
+          <p>
+            Write a program that analyzes HTML and finds a specific element, even after changes, using a set of
+            extracted attributes. We’ve prepared
+            <a href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/sample-0-origin.html">a sample HTML page</a>
+            (“original” below) and 4 simple difference cases:
+            <a href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/sample-1-evil-gemini.html">first</a>,
+            <a href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/sample-2-container-and-clone.html">second</a>,
+            <a href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/sample-3-the-escape.html">third</a>,
+            <a href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/sample-4-the-mash.html">fourth</a>
+            (“diff-case” below) for you (
+            <a target="_blank" href="https://agileengine.bitbucket.io/beKIvpUlPMtzhfAy/samples/pack/startbootstrap-sb-admin-2-examples.zip">download as a single pack</a>
+            ). Please open the pages in browser to see what we mean by minor
+            website changes. The target element that needs to be found by your program is the green “Everything OK”
+            button. Any user can easily find this button visually, even when the site changes. Original contains
+            a button with attribute <strong>id="make-everything-ok-button"</strong>.
+            This <strong>id</strong> is the only exact criteria, to find the target element in the input file.
+            See example below.
+          </p>
+
+          <table class="table table-condensed img-table">
+            <thead>
+              <tr>
+                <th>Original</th>
+                <th>Diff-Case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2"><img src="AgileEngine%20-%20Back-end%20-%20Smart%20XML%20Analyzer%20-%20Test%20Task_files/example.png"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The program must consume the original page to collect all the required information about the target element.
+            Then the program should be able to find this element in diff-case HTML document that differs a bit from the
+            original page. Original and diff-case HTML documents should be provided to the program in each run - no
+            persistence is required.
+          </p>
+          <p>
+            Consider HTML samples, as regular XML files. No image/in-browser app analysis is needed. No CSS/JS analysis
+            is needed (CSS/JS files are provided just for demo).
+          </p>
+          <p>
+            Remember that Working Software is the main goal so something simple that works is generally better, than
+            a complex unfinished solution.
+          </p>
+
+          <hr>
+
+          <h2>
+            Must have
+          </h2>
+          <p>
+            </p><ol>
+              <li>
+                We need to see your own code. No borrowed code is allowed. However, handy libraries are not forbidden.
+              </li>
+
+              <li>
+                The application must be smart enough to find the target element, at least for the provided cases.
+                However, a good algorithm should be agnostic and flexible to handle cases beyond the provided samples.
+                At the same time we don’t expect absolute reliability of the search algorithm; it must build some
+                similarity level and may fail in some specific cases.
+              </li>
+
+              <li>
+                Tool execution should look like:
+                <ul>
+                  <li>
+                    &lt;platform&gt; &lt;program_path&gt; &lt;input_origin_file_path&gt; &lt;input_other_sample_file_path&gt;
+                    <br>
+                    Where:
+                    <ul>
+                      <li>
+                        &lt;platform&gt; - the chosen language/platform;
+                      </li>
+                      <li>
+                        &lt;program_path&gt; - path to the executable app;
+                      </li>
+                      <li>
+                        &lt;input_origin_file_path&gt; - origin sample path to find the element with attribute
+                        id="make-everything-ok-button" and collect all the required information;
+                      </li>
+                      <li>
+                        &lt;input_other_sample_file_path&gt; - path to diff-case HTML file to search a similar element;
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    For example:
+                    <ul>
+                      <li>
+                        &gt;java -cp &lt;your_bundled_app&gt;.jar &lt;input_origin_file_path&gt; &lt;input_other_sample_file_path&gt;
+                      </li>
+                      <li>
+                        &gt;python &lt;your_bundled_script&gt;.py &lt;input_origin_file_path&gt; &lt;input_other_sample_file_path&gt;
+                      </li>
+                      <li>
+                        &gt;node &lt;your_bundled_script&gt;.js &lt;input_origin_file_path&gt; &lt;input_other_sample_file_path&gt;
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                Output should be a XML path to the element within the diff-case HTML file. It can be XPath or an
+                absolute path in a form that you like (for example: html &gt; body &gt; div &gt; div[1] &gt; div &gt;
+                a). Output can be provided into a file or the standard output.
+              </li>
+
+              <li>
+                Target completion time is 2 hours. We would rather see what you were able to do in 2 hours than a
+                full-blown algorithm you’ve spent days implementing. Note that in addition to quality, time used is also
+                factored into scoring the task.
+              </li>
+            </ol>
+          <p></p>
+
+          <hr>
+
+          <h2>
+            Nice to have
+          </h2>
+          <p>
+            </p><ol>
+              <li>
+                Provide the target element id for collecting the initial information through application parameters,
+                so we can search any element with id (different from the provided in the original samples). We have
+                a few other similar samples. These samples will be used in scoring, as well. Don’t be scared with this
+                task, there is no crazy diff-case like “completely other HTML page”.
+              </li>
+              <li>
+                Output how decision making about the appropriate element is done (for example, components of the
+                achieved similarity level and the values of their contribution to the result).
+              </li>
+            </ol>
+          <p></p>
+
+          <hr>
+
+          <h2>
+            Expected Deliverables
+          </h2>
+          <p>
+            </p><ol>
+              <li>
+                Source code.
+              </li>
+              <li>
+                Binary version of the algorithm that runs and produces output of comparison. No build should be
+                required.
+              </li>
+              <li>
+                Comparison output for sample pages.
+              </li>
+              <li>
+                Readme.
+              </li>
+            </ol>
+          <p></p>
+
+          <hr>
+
+          <h2>
+            Tips &amp; Hints
+          </h2>
+          <p>
+            </p><ol>
+              <li>
+                It is permitted to use CSS selectors, or XPath or any other standard for navigation in XML/HTML.
+              </li>
+              <li>
+                It is permitted to use libraries to search elements by a standard locator.
+              </li>
+              <li>
+                We've prepared some code snippets, to save your time for XML reader configuration. Please follow by links:
+                <ul>
+                  <li>
+                    <a target="_blank" href="https://bitbucket.org/agileengine/ae-backend-xml-csharp-snippets/src">C# snippets repository</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://bitbucket.org/agileengine/ae-backend-xml-java-snippets/src">Java snippets repository</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://bitbucket.org/agileengine/ae-backend-xml-nodejs-snippets/src">Node.js snippets repository</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://bitbucket.org/agileengine/ae-backend-xml-scala-snippets/src">Scala snippets repository</a>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          <p></p>
+
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="copyright text-muted">2018 © AgileEngine, LLC</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./AgileEngine - Back-end - Smart XML Analyzer - Test Task_files/jquery.min.js"></script>
+    <script src="./AgileEngine - Back-end - Smart XML Analyzer - Test Task_files/bootstrap.bundle.min.js"></script>
+
+
+
+</body></html>
