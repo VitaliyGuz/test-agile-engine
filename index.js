@@ -15,7 +15,7 @@ const getIndex = (node) => {
 
 const getPath = (path, node) => {
 	if (node && node.nodeType === 1) {
-		path = getPath(` > ${node.nodeName.toLocaleLowerCase()}${getIndex(node)}${path}`, node.parentNode);
+		path = getPath(` > ${node.nodeName.toLowerCase()}${getIndex(node)}${path}`, node.parentNode);
 	}
 	return path;
 };
@@ -28,7 +28,7 @@ try {
 	const dom = new JSDOM(fs.readFileSync(sourceFile));
 	const sourceElement = dom.window.document.getElementById(targetElementId);
 	const array = Array.prototype.slice.apply(sourceElement.attributes);
-	const cssQuery = array.map(attr => `${sourceElement.nodeName.toLocaleLowerCase()}[${attr.name}="${attr.value}"]`).join(', ');
+	const cssQuery = array.map(attr => `${sourceElement.nodeName.toLowerCase()}[${attr.name}="${attr.value}"]`).join(', ');
 	const dom1 = new JSDOM(fs.readFileSync(targetFile));
 	const elements = dom1.window.document.querySelectorAll(cssQuery);
 	elements.forEach(element => {
